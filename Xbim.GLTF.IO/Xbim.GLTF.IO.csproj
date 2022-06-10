@@ -34,12 +34,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="glTF2Loader" Version="1.1.3-alpha" />
-    <PackageReference Include="Xbim.Common" Version="5.1.259" />
-    <PackageReference Include="Xbim.Geometry.Engine.Interop" Version="5.1.239" />
-    <PackageReference Include="Xbim.Ifc" Version="5.1.259" />
-    <PackageReference Include="Xbim.IO.Esent" Version="5.1.259" />
-    <PackageReference Include="Xbim.ModelGeometry.Scene" Version="5.1.239" />
-    <PackageReference Include="Xbim.PropertySets" Version="4.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -56,10 +50,10 @@
       <HintPath>..\..\xBIM 4.7\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Logging">
-      <HintPath>..\..\xBIM 4.7\Microsoft.Extensions.Logging.dll</HintPath>
+      <HintPath>..\xBIM 4.7\Microsoft.Extensions.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Logging.Abstractions">
-      <HintPath>..\..\xBIM 4.7\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+      <HintPath>..\xBIM 4.7\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Options">
       <HintPath>..\..\xBIM 4.7\Microsoft.Extensions.Options.dll</HintPath>
@@ -77,37 +71,43 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="Xbim.Common">
-      <HintPath>..\..\xBIM 4.7\Xbim.Common.dll</HintPath>
+      <HintPath>..\xBIM 4.7\Xbim.Common.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.Geometry.Engine.Interop">
-      <HintPath>..\..\xBIM 4.7\Xbim.Geometry.Engine.Interop.dll</HintPath>
+      <HintPath>..\xBIM 4.7\Xbim.Geometry.Engine.Interop.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.Geometry.Engine32">
-      <HintPath>..\lib\Xbim.Geometry.Engine32.dll</HintPath>
+      <HintPath>..\xBIM 4.7\Xbim.Geometry.Engine32.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.Geometry.Engine64">
-      <HintPath>..\lib\Xbim.Geometry.Engine64.dll</HintPath>
+      <HintPath>..\xBIM 4.7\Xbim.Geometry.Engine64.dll</HintPath>
+    </Reference>
+    <Reference Include="Xbim.Gltf.IO">
+      <HintPath>..\xBIM 4.7\Xbim.Gltf.IO.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.Ifc">
-      <HintPath>..\..\xBIM 4.7\Xbim.Ifc.dll</HintPath>
+      <HintPath>..\xBIM 4.7\Xbim.Ifc.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.Ifc2x3">
-      <HintPath>..\..\xBIM 4.7\Xbim.Ifc2x3.dll</HintPath>
+      <HintPath>..\xBIM 4.7\Xbim.Ifc2x3.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.Ifc4">
-      <HintPath>..\..\xBIM 4.7\Xbim.Ifc4.dll</HintPath>
+      <HintPath>..\xBIM 4.7\Xbim.Ifc4.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.IO.Esent">
-      <HintPath>..\..\xBIM 4.7\Xbim.IO.Esent.dll</HintPath>
+      <HintPath>..\xBIM 4.7\Xbim.IO.Esent.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.IO.MemoryModel">
-      <HintPath>..\..\xBIM 4.7\Xbim.IO.MemoryModel.dll</HintPath>
+      <HintPath>..\xBIM 4.7\Xbim.IO.MemoryModel.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.ModelGeometry.Scene">
-      <HintPath>..\..\xBIM 4.7\Xbim.ModelGeometry.Scene.dll</HintPath>
+      <HintPath>..\xBIM 4.7\Xbim.ModelGeometry.Scene.dll</HintPath>
+    </Reference>
+    <Reference Include="Xbim.Properties">
+      <HintPath>..\xBIM 4.7\Xbim.Properties.dll</HintPath>
     </Reference>
     <Reference Include="Xbim.Tessellator">
-      <HintPath>..\..\xBIM 4.7\Xbim.Tessellator.dll</HintPath>
+      <HintPath>..\xBIM 4.7\Xbim.Tessellator.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

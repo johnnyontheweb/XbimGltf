@@ -17,7 +17,7 @@ namespace testConsle
     {
         static void Main(string[] args)
         {
-            var ifc = new FileInfo("OneWallTwoWindows.ifc");
+            var ifc = new FileInfo("singleCol.ifc");
             var xbim = CreateGeometry(ifc, true, false);
 
             using (var s = IfcStore.Open(xbim.FullName))

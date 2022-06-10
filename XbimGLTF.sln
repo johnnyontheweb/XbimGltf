@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XbimPlugin.Gltf.IO", "XbimP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testConsle", "testConsle\testConsle.csproj", "{97A49BC8-B05B-4099-B846-7D4FF4665DC5}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "testConsole", "testConsole\testConsole.vbproj", "{BB88B4C0-961D-4BC7-BE89-7E9313025813}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{97A49BC8-B05B-4099-B846-7D4FF4665DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97A49BC8-B05B-4099-B846-7D4FF4665DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97A49BC8-B05B-4099-B846-7D4FF4665DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB88B4C0-961D-4BC7-BE89-7E9313025813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB88B4C0-961D-4BC7-BE89-7E9313025813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB88B4C0-961D-4BC7-BE89-7E9313025813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB88B4C0-961D-4BC7-BE89-7E9313025813}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
