@@ -398,7 +398,7 @@ namespace Xbim.GLTF
                         rep.RepresentationType == "MappedRepresentation");
                         if (mappedOnes.Count() == 0)
                         {
-                            nodes.Append(shapeInstance.Transformation);
+                            nodes.Add(shapeInstance.Transformation);
                         }
                         else
                         {
