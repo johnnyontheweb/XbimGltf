@@ -11,6 +11,7 @@ using Xbim.Common.Metadata;
 using Xbim.Ifc4.Interfaces;
 using Xbim.Ifc;
 using Xbim.Common.Geometry;
+using Xbim.Ifc.Extensions;
 
 namespace Xbim.GLTF
 {
@@ -383,21 +384,7 @@ namespace Xbim.GLTF
                         if (entity == null)
                         { // fire error here. 
                         }
-                        var tnode = new gltf.Node();
-                        tnode.Name = $"{entity.Name} #{entity.EntityLabel}";
 
-                        // instance transformation needs to be expressed in meters
-                        //
-                        var inModelTransf = XbimMatrix3D.Copy(shapeInstance.Transformation);
-                        inModelTransf.OffsetX /= model.ModelFactors.OneMeter;
-                        inModelTransf.OffsetY /= model.ModelFactors.OneMeter;
-                        inModelTransf.OffsetZ /= model.ModelFactors.OneMeter;
-
-                        // overalltransform is already expressed in meters
-                        var tMat = XbimMatrix3D.Multiply(inModelTransf, overallTransform);
-
-                        tnode.Matrix = tMat.ToFloatArray();
-                        
                         // create mesh
                         var meshIndex = _meshes.Count;
                         targetMesh = new gltf.Mesh
@@ -405,11 +392,46 @@ namespace Xbim.GLTF
                             Name = $"Instance {productLabel}"
                         };
 
-                        // link node to mesh
-                        tnode.Mesh = meshIndex;
+                        var nodes = new List<XbimMatrix3D>();
 
-                        // add all to lists
-                        _nodes.Add(tnode);
+                        var mappedOnes = entity.Representation.Representations.Where(rep =>
+                        rep.RepresentationType == "MappedRepresentation");
+                        if (mappedOnes.Count() == 0)
+                        {
+                            nodes.Append(shapeInstance.Transformation);
+                        }
+                        else
+                        {
+                            var mapped = mappedOnes.First();
+                            nodes.AddRange(mapped.Items.Select(mr => XbimMatrix3D.Multiply(shapeInstance.Transformation, ((IIfcMappedItem)mr).MappingTarget.ToMatrix3D())));
+                        }
+
+                        for (int i = 0; i < nodes.Count(); ++i)
+                        {
+                            var coord = nodes[i];
+
+                            var tnode = new gltf.Node();
+                            tnode.Name = $"{entity.Name} {i} #{entity.EntityLabel}";
+
+                            // instance transformation needs to be expressed in meters
+                            //
+                            var inModelTransf = XbimMatrix3D.Copy(coord);
+                            inModelTransf.OffsetX /= model.ModelFactors.OneMeter;
+                            inModelTransf.OffsetY /= model.ModelFactors.OneMeter;
+                            inModelTransf.OffsetZ /= model.ModelFactors.OneMeter;
+
+                            // overalltransform is already expressed in meters
+                            var tMat = XbimMatrix3D.Multiply(inModelTransf, overallTransform);
+
+                            tnode.Matrix = tMat.ToFloatArray();
+
+                            // link node to mesh
+                            tnode.Mesh = meshIndex;
+
+                            // add node to list
+                            _nodes.Add(tnode);
+                        }
+                        // add mesh to list
                         _meshes.Add(targetMesh);
                     }
                     
