@@ -1,14 +1,7 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports System.Diagnostics
-Imports System.IO
-Imports System.Linq
-Imports System.Text
-Imports System.Threading.Tasks
+﻿Imports System.IO
 Imports Xbim.Common.Geometry
 Imports Xbim.GLTF
 Imports Xbim.Ifc
-Imports Xbim.Ifc4
 Imports Xbim.ModelGeometry.Scene
 
 Module Module1
